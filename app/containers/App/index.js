@@ -8,21 +8,12 @@
  */
 
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { renderRoutes } from 'react-router-config';
 
-import HomePage from 'containers/HomePage/Loadable';
-import NotFoundPage from 'containers/NotFoundPage/Loadable';
-
-import GlobalStyle from '../../global-styles';
-
-export default function App() {
-  return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route component={NotFoundPage} />
-      </Switch>
-      <GlobalStyle />
-    </div>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <React.Fragment>{renderRoutes(this.props.route.routes)}</React.Fragment>
+    );
+  }
 }

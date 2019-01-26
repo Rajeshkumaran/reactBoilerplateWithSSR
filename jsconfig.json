@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": "app",
+    "module": "commonjs",
+    "target": "es2016",
+    "jsx": "react",
+    "paths": {
+      "*": ["app/*", "server/*"],
+      "test/*": ["test/*"],
+      "underscore": ["lodash"]
+    }
+  },
+  "exclude": ["node_modules", "**/node_modules/*"]
+}

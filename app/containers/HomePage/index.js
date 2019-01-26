@@ -10,16 +10,18 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
+  test = () => {
+    console.log('hello');
+  };
   render() {
     return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
+      <div>
+        I am Homepage cool dude!!!!!!!!!!!!!!!!!
+        <button onClick={this.test}>CLick</button>
+      </div>
     );
   }
 }

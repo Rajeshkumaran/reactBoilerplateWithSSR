@@ -1,0 +1,65 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "safari >= 7"],
+          "node": "current"
+        },
+        "useBuiltIns": true
+      }
+    ],
+    ["react"],
+    ["stage-2"]
+  ],
+  "plugins": [
+    ["emotion"],
+    ["transform-runtime"],
+    ["react-loadable/babel"],
+    ["react-hot-loader/babel"],
+    ["add-module-exports"],
+    ["transform-object-rest-spread"],
+    ["graphql-tag"],
+    ["import-graphql"],
+    ["inline-svg"]
+  ],
+  "ignore": ["node_modules/**/*"],
+  "env": {
+    "node": {
+      "plugins": [
+        ["emotion"],
+        [
+          "module-resolver",
+          {
+            "root": ["./app"],
+            "alias": {
+              "test": "./test",
+              "underscore": "lodash"
+            }
+          }
+        ],
+        ["dynamic-import-node"],
+        [
+          "css-modules-transform",
+          {
+            "extensions": [".css", ".scss", ".less"],
+            "generateScopedName": "[name]-[local]"
+          }
+        ],
+        [
+          "transform-assets",
+          {
+            "extensions": [".svg", ".png", ".jpg", ".jpeg", ".bmp"]
+          }
+        ],
+        "transform-runtime",
+        "babel-plugin-graphql-tag",
+        "inline-svg"
+      ]
+    },
+    "webpack": {
+      "plugins": ["syntax-dynamic-import", "inline-svg"]
+    }
+  }
+}
